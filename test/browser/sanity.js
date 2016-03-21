@@ -1,4 +1,6 @@
 module.exports = {
+  '@disabled': true,
+
   'Sanity Test' : function (client) {
     client
       .url('http://localhost:3000/')

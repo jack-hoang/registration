@@ -1,5 +1,6 @@
 node_modules
 selenium-debug.log
+npm-debug.log
 test/reports
 dist/bundle.js
 dist/bundle.js.map
