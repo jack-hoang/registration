@@ -7,7 +7,10 @@ module.exports = {
     // expect element to be present in 1000ms
     client.expect.element('body').to.be.present.before(1000);
 
-    client.assert.containsText("#app", "User Registration Form");
+    client.assert.containsText('#app', 'User Registration Form');
+
+    client.expect.element('#username').to.be.present;
+    client.expect.element('#username').to.be.an('input');
 
     client.end();
   }
