@@ -1,0 +1,24 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  renderIntoDocument,
+  scryRenderedDOMComponentsWithTag
+} from 'react-addons-test-utils';
+import configureStore from '../redux/configureStore'
+import RegistrationForm from './RegistrationForm'
+
+describe('RegistrationForm', () => {
+
+  it('renders inputs for user registration', () => {
+    const store = configureStore()
+    const component = renderIntoDocument(
+      <RegistrationForm store={store} />
+    );
+    const renderedDOM = ReactDOM.findDOMNode(component)
+
+    const inputs = renderedDOM.querySelectorAll('input')
+    expect(inputs.length).toEqual(1)
+    expect(inputs[0].name).toEqual('userName')
+  })
+
+})
