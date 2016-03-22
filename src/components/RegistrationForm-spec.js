@@ -17,7 +17,7 @@ describe('RegistrationForm', () => {
     const renderedDOM = ReactDOM.findDOMNode(component)
 
     const inputs = renderedDOM.querySelectorAll('input')
-    expect(inputs.length).toEqual(1)
+    expect(inputs.length).toEqual(3)
     expect(inputs[0]).toBeDefined()
     expect(inputs[0].name).toEqual('userName')
     expect(inputs[1]).toBeDefined()
