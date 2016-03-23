@@ -10,6 +10,11 @@ class FormField extends Component {
     inputProps: PropTypes.object
   }
 
+  static defaultProps = {
+    field: {},
+    inputProps: {}
+  }
+
   render() {
    const {id, field, label, inputProps} = this.props
    return (
@@ -28,12 +33,6 @@ class FormField extends Component {
    )
   }
 
-}
-
-
-FormField.defaultProps = {
-  field: {},
-  inputProps: {}
 }
 
 export default FormField
