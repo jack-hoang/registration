@@ -10,14 +10,15 @@ import FormField from './FormField'
 
 describe('when a FormField is declared with id="user", label="User" and field="user"', () => {
 
-  it('renders a field with an id of "user", has a label "User" and is connected to the user in fields', () => {
+  it('renders a field with an id of "user", has a label "User"', () => {
     const component = renderIntoDocument(
-      <FormField id='user' label='User' field='user' />
+      <FormField id='user' label='User' />
     );
 
     const renderedDOM = ReactDOM.findDOMNode(component)
     const label = renderedDOM.querySelector('label')
 
+    expect(label.htmlFor).toEqual('user')
     expect(label.textContent).toEqual('User')
   })
 
