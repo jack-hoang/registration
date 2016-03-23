@@ -1,24 +1,21 @@
 import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 
+import FormField from './FormField'
+import TextInput from './TextInput'
+
 class RegistrationForm extends Component {
   render() {
     const {fields: {userName, email, phone}, handleSubmit} = this.props;
     return (
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name</label>
-          <input type="text" {...userName}/>
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="text" {...email}/>
-        </div>
-        <div>
-          <label>Phone Number</label>
-          <input type="text" {...phone}/>
-        </div>
-      </form>
+      <div>
+        <h1>User Registration Form</h1>
+        <form onSubmit={handleSubmit}>
+          <div><TextInput label='Name' id='userName' /></div>
+          <div><TextInput label='Email' id='email' /></div>
+          <div><TextInput label='Phone Number' id='phone' /></div>
+        </form>
+      </div>
     );
   }
 }

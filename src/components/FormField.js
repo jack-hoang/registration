@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import Grid from 'react-bootstrap/lib/Grid'
 import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
 
@@ -18,18 +19,16 @@ class FormField extends Component {
   render() {
    const {id, field, label, inputProps} = this.props
    return (
-     <div>
+     <Grid>
      <Row>
-       <Col sm={4}>
+       <Col md={4}>
          <label htmlFor={id}>{label}</label>
        </Col>
-    </Row>
-    <Row>
-      <Col sm={8}>
+      <Col md={8}>
          {this.props.children}
       </Col>
     </Row>
-    </div>
+    </Grid>
    )
   }
 
