@@ -17,13 +17,15 @@ describe('RegistrationForm', () => {
     const renderedDOM = ReactDOM.findDOMNode(component)
 
     const inputs = renderedDOM.querySelectorAll('input')
-    expect(inputs.length).toEqual(3)
+    expect(inputs.length).toEqual(2)
     expect(inputs[0]).toBeDefined()
     expect(inputs[0].name).toEqual('userName')
     expect(inputs[1]).toBeDefined()
     expect(inputs[1].name).toEqual('email')
-    expect(inputs[2]).toBeDefined()
-    expect(inputs[2].name).toEqual('phone')
+
+    const buttons = scryRenderedDOMComponentsWithTag(component, 'button');
+    expect(buttons.length).toEqual(1);
+    expect(buttons[0].textContent).toEqual('Register');
   })
 
 })
