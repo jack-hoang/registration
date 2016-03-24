@@ -1,13 +1,7 @@
 The following are the user stories for this application:
 
 1. Display Registration Form
-  When a user goes to the registration page, a registration form will be displayed so the user can fill in their name, email address, phone number and address.
-  The address consists of one field for each of the following:
-    House number + street name
-    Additional field for address info (such as P.O. Box #)
-    City
-    State
-    Postal Code
+  When a user goes to the registration page, a registration form will be displayed so the user can fill in their name and email address.
   A "Next step" button will be available to continue the registration process.
 
 2. Review registration info
