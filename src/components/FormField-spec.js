@@ -8,7 +8,7 @@ import {
 
 import FormField from './FormField'
 
-describe('when a FormField is declared with id="user", label="User" and field="user"', () => {
+describe('when a FormField is declared with id="user", label="User"', () => {
 
   it('renders a field with an id of "user", has a label "User"', () => {
     const component = renderIntoDocument(
