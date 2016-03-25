@@ -6,7 +6,7 @@ module.exports = {
     entry: {
         app: [
             'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-            'bootstrap-loader',
+//            'bootstrap-loader',
             './src/index.js'
         ]
     },
