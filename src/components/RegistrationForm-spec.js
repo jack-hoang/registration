@@ -6,7 +6,7 @@ import {
   findRenderedDOMComponentWithTag,
   Simulate
 } from 'react-addons-test-utils'
-import configureStore from '../redux/configureStore'
+import configureStore from '../store/configureStore'
 import RegistrationForm from './RegistrationForm'
 
 describe('RegistrationForm', () => {
@@ -30,7 +30,7 @@ describe('RegistrationForm', () => {
     expect(buttons[0].textContent).toEqual('Register')
   })
 
-  it('invokes callback whenform is submitted', () => {
+  it('invokes callback when form is submitted', () => {
     const store = configureStore()
     const register = jasmine.createSpy("register")
     const component = renderIntoDocument(

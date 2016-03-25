@@ -2,7 +2,7 @@ import React  from 'react'
 import ReactDOM from 'react-dom';
 import {Router, Route, hashHistory} from 'react-router'
 
-import configureStore from './redux/configureStore'
+import configureStore from './store/configureStore'
 import makeRoutes from './routes'
 import Root from './containers/Root'
 
@@ -14,6 +14,6 @@ let register = () => {
 }
 
 ReactDOM.render(
-  <Root routes={routes} store={store} />,
+  <Root history={hashHistory} routes={routes} store={store} />,
   document.querySelector('#app')
 )

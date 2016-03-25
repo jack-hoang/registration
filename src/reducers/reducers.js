@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 import {reducer as formReducer} from 'redux-form'
-import registrationReducer from '../reducers/registrationReducer'
+import registrationReducer from './registrationReducer'
 
 export default combineReducers({
   form: formReducer,
