@@ -9,8 +9,14 @@ module.exports = {
 
     client.assert.containsText('#app', 'User Registration Form');
 
-    client.expect.element('#username').to.be.present;
-    client.expect.element('#username').to.be.an('input');
+    client.expect.element('#userName').to.be.present;
+    client.expect.element('#userName').to.be.an('input');
+
+    client.expect.element('#email').to.be.present;
+    client.expect.element('#email').to.be.an('input');
+
+    client.expect.element('button[type=submit]').to.be.present;
+    client.expect.element('button[type=submit]').text.to.equal('Register');
 
     client.end();
   }
