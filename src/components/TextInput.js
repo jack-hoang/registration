@@ -14,7 +14,7 @@ class TextInput extends Component {
   render() {
     const {id, field, label, inputProps} = this.props
     return <FormField id={id} field={field} inputProps={inputProps} label={label}>
-      <input name={id} {...inputProps} />
+      <input id={id} {...inputProps} />
     </FormField>
   }
 }
