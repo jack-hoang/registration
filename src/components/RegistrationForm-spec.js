@@ -21,9 +21,9 @@ describe('RegistrationForm', () => {
     const inputs = renderedDOM.querySelectorAll('input')
     expect(inputs.length).toEqual(2)
     expect(inputs[0]).toBeDefined()
-    expect(inputs[0].name).toEqual('userName')
+    expect(inputs[0].id).toEqual('userName')
     expect(inputs[1]).toBeDefined()
-    expect(inputs[1].name).toEqual('email')
+    expect(inputs[1].id).toEqual('email')
 
     const buttons = scryRenderedDOMComponentsWithTag(component, 'button')
     expect(buttons.length).toEqual(1)

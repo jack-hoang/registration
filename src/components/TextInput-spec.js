@@ -22,7 +22,7 @@ describe('when a TextInput is declared', () => {
     expect(label.textContent).toEqual('Group')
 
     const input = renderedDOM.querySelector('input')
-    expect(input.name).toEqual('group')
+    expect(input.id).toEqual('group')
 
   })
 
