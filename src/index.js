@@ -1,12 +1,19 @@
 import React  from 'react'
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux'
+import {Router, Route, hashHistory} from 'react-router'
 
 import configureStore from './redux/configureStore'
-import RegistrationForm from './components/RegistrationForm'
+import makeRoutes from './routes'
+import Root from './containers/Root'
 
-let store = configureStore()
+const store = configureStore()
+const routes = makeRoutes(store)
+
+let register = () => {
+  console.log("REGISTERED!!!")
+}
 
 ReactDOM.render(
-  <Provider store={store}><RegistrationForm/></Provider>, document.querySelector('#app')
+  <Root routes={routes} store={store} />,
+  document.querySelector('#app')
 )
