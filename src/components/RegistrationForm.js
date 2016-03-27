@@ -1,22 +1,39 @@
 import React, {Component, PropTypes} from 'react'
-import {connect} from 'react-redux'
 
-import FormField from './FormField'
 import TextInput from './TextInput'
 
-export class RegistrationForm extends Component {
+export default class RegistrationForm extends Component {
   static propTypes = {
-    formUpdate: PropTypes.func.isRequired
+    formUpdate: PropTypes.func
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName: "",
+      email: ""
+    };
+  }
+
+  handleInputChange(evt) {
+    this.setState({
+      [evt.target.id]: evt.target.value
+    })
+  }
+
+  handleSubmit(evt) {
+    evt.preventDefault()
+    this.props.formUpdate(this.state)
   }
 
   render() {
     return (
       <div>
         <h1>User Registration Form</h1>
-        <form>
-          <div><TextInput label='Name' id='userName' /></div>
-          <div><TextInput label='Email' id='email' /></div>
-          <div><button onClick={this.props.formUpdate}>Register</button>
+        <form onChange={::this.handleInputChange} onSubmit={::this.handleSubmit}>
+          <div><TextInput label='Name' id='userName' value={this.state.userName} /></div>
+          <div><TextInput label='Email' id='email' value={this.state.email}/></div>
+          <div><button>Register</button>
           </div>
         </form>
       </div>
