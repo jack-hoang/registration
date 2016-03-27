@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 import App from '../components/App'
-import RegistrationForm from '../components/RegistrationForm'
+import UserRegistration from '../containers/UserRegistration'
 
 export default (store) => (
   <Route path='/' component={App}>
-    <IndexRoute component={RegistrationForm} />
+    <IndexRoute component={UserRegistration} />
   </Route>
 )

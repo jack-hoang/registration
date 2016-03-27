@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {
   renderIntoDocument,
-  scryRenderedDOMComponentsWithTag,
   findRenderedDOMComponentWithTag,
   Simulate
 } from 'react-addons-test-utils'
@@ -32,10 +31,11 @@ describe('UserRegistration', () => {
     const inputs = renderedDOM.querySelectorAll('input')
     Array.from(inputs).forEach((i) => {
       i.value = formData[i.id]
+      Simulate.change(i)
     })
 
-    const buttons = scryRenderedDOMComponentsWithTag(component, 'button')
-    Simulate.click(buttons[0])
+    const form = findRenderedDOMComponentWithTag(component, 'form');
+    Simulate.submit(form)
 
     expect(store.dispatch).toHaveBeenCalledWith(actions.formUpdate(formData))
   })
