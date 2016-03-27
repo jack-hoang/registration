@@ -53,8 +53,8 @@ describe('RegistrationForm', () => {
       i.value = formData[i.id]
     })
 
-    const form = findRenderedDOMComponentWithTag(component, 'form')
-    Simulate.submit(form)
+    const buttons = scryRenderedDOMComponentsWithTag(component, 'button')
+    Simulate.click(buttons[0])
 
     expect(store.dispatch).toHaveBeenCalledWith(actions.formUpdate(formData))
   })

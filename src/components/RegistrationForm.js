@@ -1,28 +1,22 @@
 import React, {Component, PropTypes} from 'react'
-import {reduxForm} from 'redux-form'
+import {connect} from 'react-redux'
 
 import FormField from './FormField'
 import TextInput from './TextInput'
 
-class RegistrationForm extends Component {
+export class RegistrationForm extends Component {
   static propTypes = {
-    fields: PropTypes.object.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    error: PropTypes.string,
-    submitting: PropTypes.bool.isRequired
+    formUpdate: PropTypes.func.isRequired
   }
 
   render() {
-    const {fields: {userName, email}, handleSubmit, error, submitting} = this.props;
     return (
       <div>
         <h1>User Registration Form</h1>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div><TextInput label='Name' id='userName' /></div>
           <div><TextInput label='Email' id='email' /></div>
-          <div><button type="submit" disabled={submitting}>
-                  Register
-              </button>
+          <div><button onClick={this.props.formUpdate}>Register</button>
           </div>
         </form>
       </div>
@@ -30,10 +24,3 @@ class RegistrationForm extends Component {
   }
 
 }
-
-RegistrationForm = reduxForm({
-  form: 'registration',
-  fields: ['userName', 'email']
-})(RegistrationForm);
-
-export default RegistrationForm

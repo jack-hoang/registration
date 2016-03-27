@@ -11,7 +11,6 @@ describe('store', () => {
 
   it('should start with a blank state', () => {
     const initialState = {
-      form: {},
       registration: {}
     }
     expect(store.getState()).toEqual(initialState)
@@ -23,7 +22,6 @@ describe('store', () => {
       email: 'john.doe@example.com'
     }
     const expectedState = {
-      form: {},
       registration: {
         userName: 'John Doe',
         email: 'john.doe@example.com'
