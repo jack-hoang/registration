@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'
 import {
   renderIntoDocument,
   scryRenderedDOMComponentsWithTag,
-  findRenderedDOMComponentWithTag
+  findRenderedDOMComponentWithTag,
+  findRenderedDOMComponentWithClass
 } from 'react-addons-test-utils'
 
 import RegistrationForm from './RegistrationForm'
@@ -15,6 +16,10 @@ describe('RegistrationForm', () => {
       <RegistrationForm/>
     )
     const renderedDOM = ReactDOM.findDOMNode(component)
+
+    const title = findRenderedDOMComponentWithClass(component, 'title')
+    expect(title).toBeDefined()
+    expect(title.textContent).toEqual('User Registration Form')
 
     const inputs = renderedDOM.querySelectorAll('input')
     expect(inputs.length).toEqual(2)
