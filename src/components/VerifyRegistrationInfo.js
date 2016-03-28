@@ -28,6 +28,12 @@ export default class RegistrationForm extends Component {
         <Col md={6}>Email</Col>
         <Col md={6} id='email'>{state.email}</Col>
       </Row>
+      <Row>
+        <Col md={12}>
+          <button id='edit'>Edit</button>
+          <button id='confirm'>Confirm</button>
+        </Col>
+      </Row>
       </Grid>
     )
   }
