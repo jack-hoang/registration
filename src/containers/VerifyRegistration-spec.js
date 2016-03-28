@@ -15,8 +15,10 @@ describe('VerifyRegistration', () => {
 
   it('displays info from state', () => {
     const state = {
-      userName: 'John Doe',
-      email: 'john.doe@example.com'
+      registration: {
+        userName: 'John Doe',
+        email: 'john.doe@example.com'
+      }
     }
 
     const store = mockStore(state)
@@ -28,12 +30,12 @@ describe('VerifyRegistration', () => {
     const renderedDOM = ReactDOM.findDOMNode(component)
 
     const userName = renderedDOM.querySelector('#userName')
-    expect(userName).toBeDefined()
-    expect(userName.textContent).toEqual(state.userName)
+    expect(userName).not.toBeNull()
+    expect(userName.textContent).toEqual(state.registration.userName)
 
     const email = renderedDOM.querySelector('#email')
-    expect(email).toBeDefined()
-    expect(email.textContent).toEqual(state.email)
+    expect(email).not.toBeNull()
+    expect(email.textContent).toEqual(state.registration.email)
 
   })
 
