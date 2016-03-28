@@ -29,7 +29,7 @@ export default class RegistrationForm extends Component {
   render() {
     return (
       <div>
-        <h1 className="title">User Registration Form</h1>
+        <h1 id="title">User Registration Form</h1>
         <form onChange={::this.handleInputChange} onSubmit={::this.handleSubmit}>
           <div><TextInput label='Name' id='userName' value={this.state.userName} /></div>
           <div><TextInput label='Email' id='email' value={this.state.email}/></div>

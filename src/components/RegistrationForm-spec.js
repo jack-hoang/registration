@@ -17,7 +17,7 @@ describe('RegistrationForm', () => {
     )
     const renderedDOM = ReactDOM.findDOMNode(component)
 
-    const title = findRenderedDOMComponentWithClass(component, 'title')
+    const title = renderedDOM.querySelector('#title')
     expect(title).toBeDefined()
     expect(title.textContent).toEqual('User Registration Form')
 
