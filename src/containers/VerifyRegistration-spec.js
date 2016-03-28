@@ -5,9 +5,11 @@ import {
   findRenderedDOMComponentWithTag,
   Simulate
 } from 'react-addons-test-utils'
-import configureStore from '../store/configureStore'
+import configureStore from 'redux-mock-store'
 
 import VerifyRegistration from './VerifyRegistration'
+
+const mockStore = configureStore()
 
 describe('VerifyRegistration', () => {
 
@@ -17,8 +19,7 @@ describe('VerifyRegistration', () => {
       email: 'john.doe@example.com'
     }
 
-    const store = configureStore()
-    store.setState(state)
+    const store = mockStore(state)
 
     const component = renderIntoDocument(
       <VerifyRegistration store={store}/>
