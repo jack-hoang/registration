@@ -34,13 +34,13 @@ module.exports = {
     client.assert.containsText('#app', 'Verify User information');
 
     client.expect.element('#userName').to.be.present;
-    client.expect.element('#userName').to.be.an('div');
+    client.expect.element('#userName').to.be.a('div');
 
     client.expect.element('#email').to.be.present;
-    client.expect.element('#email').to.be.an('div');
+    client.expect.element('#email').to.be.a('div');
 
-    client.expect.element('button[name=edit]').to.be.present;
-    client.expect.element('button[name=verify]').to.be.present;
+    client.expect.element('button[id=edit]').to.be.present;
+    client.expect.element('button[id=confirm]').to.be.present;
 
     client.end();
   }
