@@ -1,5 +1,7 @@
-import {connect} from 'react-redux'
-import * as actions from '../actions/actions'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
+import { formUpdate } from '../actions/actions'
 import RegistrationForm from '../components/RegistrationForm'
 
 const mapStateToProps = (state) => {
@@ -9,7 +11,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = actions
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({formUpdate, push }, dispatch)
+}
 
 const UserRegistration = connect(
   mapStateToProps,

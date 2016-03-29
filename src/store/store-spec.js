@@ -9,11 +9,9 @@ describe('store', () => {
     store = configureStore()
   })
 
-  it('should start with a blank state', () => {
-    const initialState = {
-      registration: {}
-    }
-    expect(store.getState()).toEqual(initialState)
+  it('should start with a blank registration state', () => {
+    const initialState = { }
+    expect(store.getState().registration).toEqual(initialState)
   })
 
   it('dispatch '+types.FORM_UPDATE+' should add user information to registration', () => {
@@ -22,13 +20,11 @@ describe('store', () => {
       email: 'john.doe@example.com'
     }
     const expectedState = {
-      registration: {
-        userName: 'John Doe',
-        email: 'john.doe@example.com'
-      }
+      userName: 'John Doe',
+      email: 'john.doe@example.com'
     }
     store.dispatch(actions.formUpdate(formData))
-    expect(store.getState()).toEqual(expectedState)
+    expect(store.getState().registration).toEqual(expectedState)
   })
 
 })

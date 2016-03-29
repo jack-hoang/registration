@@ -1,9 +1,12 @@
-import {createStore} from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import { browserHistory } from 'react-router'
+import { routerMiddleware } from 'react-router-redux'
 
 import rootReducer from '../reducers/reducers'
 
-module.exports = function configureStore() {
-  var store = createStore(rootReducer)
+export default function configureStore() {
+  const middleware = routerMiddleware(browserHistory)
+  const store = createStore(rootReducer, applyMiddleware(middleware))
 
   if (process.env.NODE_ENV !== 'production') {
     if (module.hot) {

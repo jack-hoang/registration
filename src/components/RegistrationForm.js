@@ -4,7 +4,8 @@ import TextInput from './TextInput'
 
 export default class RegistrationForm extends Component {
   static propTypes = {
-    formUpdate: PropTypes.func
+    formUpdate: PropTypes.func,
+    push: PropTypes.func
   }
 
   constructor(props) {
@@ -24,6 +25,7 @@ export default class RegistrationForm extends Component {
   handleSubmit(evt) {
     evt.preventDefault()
     this.props.formUpdate(this.state)
+    this.props.push('/verify')
   }
 
   render() {

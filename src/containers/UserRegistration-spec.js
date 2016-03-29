@@ -6,6 +6,7 @@ import {
   Simulate
 } from 'react-addons-test-utils'
 import configureStore from '../store/configureStore'
+import { push } from 'react-router-redux'
 
 import * as actions from '../actions/actions'
 import * as types from '../actions/ActionTypes'
@@ -38,6 +39,7 @@ describe('UserRegistration', () => {
     Simulate.submit(form)
 
     expect(store.dispatch).toHaveBeenCalledWith(actions.formUpdate(formData))
+    expect(store.dispatch).toHaveBeenCalledWith(push('/verify'))
   })
 
 })
