@@ -2,11 +2,12 @@ The following are the user stories for this application:
 
 1. Display Registration Form
   When a user goes to the registration page, a registration form will be displayed so the user can fill in their name and email address.
-  A "Next step" button will be available to continue the registration process.
+  A "Next" button will be available to continue the registration process.
 
 2. Review registration info
   After a user submits the registration form, the page will display the information to allow the user to review before continuing.
-  A "Register" button will be available to submit the form to the server.
+  An "Edit" button will bring the user back to the previous form page.
+  A "Register" button will be available to complete registration.
 
 3. Registration confirmation
   If the registration information is valid, a success message of "Registration successful" will be displayed to the user.
