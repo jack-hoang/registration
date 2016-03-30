@@ -32,12 +32,10 @@ describe('When registration reducer receives actions', () => {
     expect(
       registrationReducer(
         {},
-        actions.register(formData))
-      ).registrationStatus.toEqual(
-        "Thank you " + formData.userName
-            + "! You have successfully registered."
-      )
-
+        actions.register(formData)
+      ).registrationStatus)
+    .toEqual('Thank you ' + formData.userName
+        + '! You have successfully registered.')
   })
 
 })
