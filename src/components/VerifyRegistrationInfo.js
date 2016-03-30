@@ -5,12 +5,16 @@ import Col from 'react-bootstrap/lib/Col'
 
 export default class VerifyRegistrationInfo extends Component {
   static propTypes = {
-    formUpdate: PropTypes.func
+    push: PropTypes.func
   }
 
   constructor(props) {
     super(props);
     this.state = props.state || {}
+  }
+
+  edit(evt) {
+    this.props.push('/')
   }
 
   render() {
@@ -30,7 +34,7 @@ export default class VerifyRegistrationInfo extends Component {
       </Row>
       <Row>
         <Col md={12}>
-          <button id='edit'>Edit</button>
+          <button id='edit' onClick={::this.edit}>Edit</button>
           <button id='confirm'>Confirm</button>
         </Col>
       </Row>

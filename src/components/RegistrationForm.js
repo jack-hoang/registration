@@ -11,9 +11,9 @@ export default class RegistrationForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: "",
-      email: ""
-    };
+        userName: props.userName,
+        email: props.email
+      };
   }
 
   handleInputChange(evt) {

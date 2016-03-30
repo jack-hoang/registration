@@ -11,10 +11,14 @@ class TextInput extends Component {
     inputProps: {}
   }
 
+  handleChange(evt) {
+    this.setState({value: evt.target.value})
+  }
+
   render() {
-    const {id, field, label, inputProps} = this.props
+    const {id, field, label, value, inputProps} = this.props
     return <FormField id={id} field={field} inputProps={inputProps} label={label}>
-      <input id={id} {...inputProps} />
+      <input id={id} {...inputProps} value={value} onChange={::this.handleChange} />
     </FormField>
   }
 }
