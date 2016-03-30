@@ -35,7 +35,7 @@ export default class VerifyRegistrationInfo extends Component {
       <Row>
         <Col md={12}>
           <button id='edit' onClick={::this.edit}>Edit</button>
-          <button id='confirm'>Confirm</button>
+          <button id='register'>Register</button>
         </Col>
       </Row>
       </Grid>

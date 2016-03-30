@@ -37,7 +37,7 @@ describe('When rendering VerifyRegistrationInfo ', () => {
     const buttons = scryRenderedDOMComponentsWithTag(component, 'button')
     expect(buttons.length).toEqual(2)
     expect(buttons[0].textContent).toEqual('Edit')
-    expect(buttons[1].textContent).toEqual('Confirm')
+    expect(buttons[1].textContent).toEqual('Register')
 
   })
 

@@ -30,7 +30,7 @@ describe('RegistrationForm', () => {
 
     const buttons = scryRenderedDOMComponentsWithTag(component, 'button')
     expect(buttons.length).toEqual(1)
-    expect(buttons[0].textContent).toEqual('Register')
+    expect(buttons[0].textContent).toEqual('Next')
   })
 
 })

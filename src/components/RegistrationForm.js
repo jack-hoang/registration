@@ -35,7 +35,7 @@ export default class RegistrationForm extends Component {
         <form onChange={::this.handleInputChange} onSubmit={::this.handleSubmit}>
           <div><TextInput label='Name' id='userName' value={this.state.userName} /></div>
           <div><TextInput label='Email' id='email' value={this.state.email}/></div>
-          <div><button>Register</button>
+          <div><button>Next</button>
           </div>
         </form>
       </div>
