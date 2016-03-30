@@ -6,3 +6,10 @@ export function formUpdate(data) {
     payload: data
   }
 }
+
+export function register(data) {
+  return {
+    type: types.REGISTER,
+    payload: data
+  }
+}
