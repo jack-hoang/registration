@@ -9,9 +9,9 @@ import {
 
 import VerifyRegistrationInfo from './VerifyRegistrationInfo'
 
-describe('VerifyRegistrationInfo ', () => {
+describe('When rendering VerifyRegistrationInfo ', () => {
 
-  it('renders user registration info for verification', () => {
+  it('should show user registration info for verification', () => {
     const state = {
       userName: 'John Doe',
       email: 'john.doe@example.com'
