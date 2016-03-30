@@ -65,6 +65,25 @@ module.exports = {
     client.expect.element('#title').text.to.contain('User Registration Form');
 
     client.end();
+  },
+
+  'Registering' : function(client) {
+    client
+      .url('http://localhost:3000/')
+      .pause(1000);
+
+    client.setValue('#userName', 'John Doe');
+    client.setValue('#email', 'john.doe@example.com');
+    client.click('button');
+    client.pause(1000);
+
+    client.expect.element('button[id=register]').to.be.present;
+    client.click('button[id=register]');
+    client.pause(1000);
+
+    client.expect.element('#title').text.to.contain('Registration Status');
+
+    client.end();
   }
 
 }

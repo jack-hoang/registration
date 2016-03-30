@@ -70,3 +70,31 @@ describe('When Edit button is clicked in VerifyRegistration', () => {
   })
 
 })
+
+describe('When Register button is clicked in VerifyRegistration', () => {
+
+  it('should submit information and return success message', () => {
+    const state = {
+      registration: {
+        userName: 'John Doe',
+        email: 'john.doe@example.com'
+      }
+    }
+
+    const store = mockStore(state)
+    spyOn(store, 'dispatch')
+
+    const component = renderIntoDocument(
+      <VerifyRegistration store={store}/>
+    )
+
+    const renderedDOM = ReactDOM.findDOMNode(component)
+
+    const buttons = scryRenderedDOMComponentsWithTag(component, 'button')
+    expect(buttons[1].textContent).toEqual('Register')
+    Simulate.click(buttons[1])
+
+    expect(store.dispatch).toHaveBeenCalledWith(push('/register'))
+  })
+
+})
