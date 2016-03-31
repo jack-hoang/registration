@@ -15,7 +15,7 @@ export default class RegistrationStatusInfo extends Component {
     return (
       <Grid>
       <Row>
-        <Col md={12} id='title'>Registration Status</Col>
+        <Col md={12}><h1 id='title'>Registration Status</h1></Col>
       </Row>
       <Row>
         <Col md={12} id='message'>{registrationStatus}</Col>

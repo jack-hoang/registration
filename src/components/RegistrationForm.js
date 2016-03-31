@@ -1,4 +1,7 @@
 import React, {Component, PropTypes} from 'react'
+import Grid from 'react-bootstrap/lib/Grid'
+import Row from 'react-bootstrap/lib/Row'
+import Col from 'react-bootstrap/lib/Col'
 
 import TextInput from './TextInput'
 
@@ -30,14 +33,15 @@ export default class RegistrationForm extends Component {
 
   render() {
     return (
-      <div>
+      <div id="registrationForm">
         <h1 id="title">User Registration Form</h1>
+        <div>
         <form onChange={::this.handleInputChange} onSubmit={::this.handleSubmit}>
-          <div><TextInput label='Name' id='userName' value={this.state.userName} /></div>
-          <div><TextInput label='Email' id='email' value={this.state.email}/></div>
-          <div><button>Next</button>
-          </div>
+          <TextInput label='Name' id='userName' value={this.state.userName} />
+          <TextInput label='Email' id='email' value={this.state.email}/>
+          <Grid><Row><Col md={4}></Col><Col md={8}><button>Next</button></Col></Row></Grid>
         </form>
+        </div>
       </div>
     );
   }

@@ -28,18 +28,19 @@ export default class VerifyRegistrationInfo extends Component {
     return (
       <Grid>
       <Row>
-        <Col md={12} id='title'>Verify Registration Information</Col>
+        <Col md={12}><h1 id='title'>Verify Registration Information</h1></Col>
       </Row>
       <Row>
-        <Col md={6}>Name</Col>
-        <Col md={6} id='userName'>{state.userName}</Col>
+        <Col md={3}>Name</Col>
+        <Col md={3} id='userName'>{state.userName}</Col>
       </Row>
       <Row>
-        <Col md={6}>Email</Col>
-        <Col md={6} id='email'>{state.email}</Col>
+        <Col md={3}>Email</Col>
+        <Col md={3} id='email'>{state.email}</Col>
       </Row>
       <Row>
-        <Col md={12}>
+        <Col md={3}></Col>
+        <Col md={3}>
           <button id='edit' onClick={::this.edit}>Edit</button>
           <button id='register' onClick={::this.reg}>Register</button>
         </Col>
