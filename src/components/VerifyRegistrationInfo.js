@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/lib/Col'
 
 export default class VerifyRegistrationInfo extends Component {
   static propTypes = {
+    register: PropTypes.func,
     push: PropTypes.func
   }
 
@@ -17,9 +18,10 @@ export default class VerifyRegistrationInfo extends Component {
     this.props.push('/')
   }
 
-    register(evt) {
-      this.props.push('/register')
-    }
+  reg(evt) {
+    this.props.register(this.props.state)
+    this.props.push('/register')
+  }
 
   render() {
     const { state } = this.props
@@ -39,7 +41,7 @@ export default class VerifyRegistrationInfo extends Component {
       <Row>
         <Col md={12}>
           <button id='edit' onClick={::this.edit}>Edit</button>
-          <button id='register' onClick={::this.register}>Register</button>
+          <button id='register' onClick={::this.reg}>Register</button>
         </Col>
       </Row>
       </Grid>

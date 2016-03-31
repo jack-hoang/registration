@@ -17,8 +17,10 @@ describe('When rendering RegistrationStatus', () => {
 
   it('should display status message from state', () => {
     const state = {
-      userName: 'John Doe',
-      registrationStatus: 'Thank you John Doe! You have successfully registered.'
+      registration: {
+        userName: 'John Doe',
+        registrationStatus: 'Thank you John Doe! You have successfully registered.'
+      }
     }
 
     const store = mockStore(state)
@@ -35,7 +37,7 @@ describe('When rendering RegistrationStatus', () => {
 
     const message = renderedDOM.querySelector('#message')
     expect(message).not.toBeNull()
-    expect(message.textContent).toEqual(state.registrationStatus)
+    expect(message.textContent).toEqual(state.registration.registrationStatus)
 
   })
 

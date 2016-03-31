@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import { push } from 'react-router-redux'
-import * as actions from '../actions/actions'
+import { register } from '../actions/actions'
 
 import VerifyRegistrationInfo from '../components/VerifyRegistrationInfo'
 
@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ push }, dispatch)
+  return bindActionCreators({ register, push }, dispatch)
 }
 
 const VerifyRegistration = connect(
