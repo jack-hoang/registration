@@ -15,8 +15,12 @@ describe('When rendering RegistrationStatusInfo', () => {
     const state = {
       userName: 'John Doe',
     }
+
+    const successMessage = 'Thank you ' + state.userName
+        + '! You have successfully registered.'
+
     const component = renderIntoDocument(
-      <RegistrationStatusInfo state={state}/>
+      <RegistrationStatusInfo state={state} message={successMessage} />
     )
 
     const renderedDOM = ReactDOM.findDOMNode(component)
