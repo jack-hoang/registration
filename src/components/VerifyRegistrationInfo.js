@@ -17,6 +17,10 @@ export default class VerifyRegistrationInfo extends Component {
     this.props.push('/')
   }
 
+    register(evt) {
+      this.props.push('/register')
+    }
+
   render() {
     const { state } = this.props
     return (
@@ -35,7 +39,7 @@ export default class VerifyRegistrationInfo extends Component {
       <Row>
         <Col md={12}>
           <button id='edit' onClick={::this.edit}>Edit</button>
-          <button id='register'>Register</button>
+          <button id='register' onClick={::this.register}>Register</button>
         </Col>
       </Row>
       </Grid>
