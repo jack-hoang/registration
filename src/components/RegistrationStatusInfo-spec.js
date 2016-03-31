@@ -12,15 +12,17 @@ import RegistrationStatusInfo from './RegistrationStatusInfo'
 describe('When rendering RegistrationStatusInfo', () => {
 
   it('should show a success message', () => {
-    const state = {
-      userName: 'John Doe',
-    }
-
-    const successMessage = 'Thank you ' + state.userName
+    const userName = 'John Doe'
+    const successMessage = 'Thank you ' + userName
         + '! You have successfully registered.'
 
+    const state = {
+      userName: userName,
+      statusMessage: successMessage
+    }
+
     const component = renderIntoDocument(
-      <RegistrationStatusInfo state={state} message={successMessage} />
+      <RegistrationStatusInfo state={state} />
     )
 
     const renderedDOM = ReactDOM.findDOMNode(component)
@@ -31,7 +33,7 @@ describe('When rendering RegistrationStatusInfo', () => {
 
     const message = renderedDOM.querySelector('#message')
     expect(message).not.toBeNull()
-    expect(message.textContent).toEqual('Thank you John Doe! You have successfully registered.')
+    expect(message.textContent).toEqual(successMessage)
 
   })
 
