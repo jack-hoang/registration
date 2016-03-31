@@ -13,14 +13,14 @@ export default class RegistrationStatusInfo extends Component {
   }
 
   render() {
-    const { state } = this.props
+    const { message } = this.props
     return (
       <Grid>
       <Row>
         <Col md={12} id='title'>Registration Status</Col>
       </Row>
       <Row>
-        <Col md={12} id='message'>Thank you {state.userName}! You have successfully registered.</Col>
+        <Col md={12} id='message'>{message}</Col>
       </Row>
       </Grid>
     )
