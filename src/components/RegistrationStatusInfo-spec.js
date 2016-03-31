@@ -18,7 +18,7 @@ describe('When rendering RegistrationStatusInfo', () => {
 
     const state = {
       userName: userName,
-      statusMessage: successMessage
+      registrationStatus: successMessage
     }
 
     const component = renderIntoDocument(

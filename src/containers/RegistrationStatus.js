@@ -8,7 +8,7 @@ import RegistrationStatusInfo from '../components/RegistrationStatusInfo'
 const mapStateToProps = (state) => {
   return {
     state: {
-      statusMessage: state.statusMessage
+      registrationStatus: state.registrationStatus
     }
   }
 }
