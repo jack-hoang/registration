@@ -27,4 +27,19 @@ describe('store', () => {
     expect(store.getState().registration).toEqual(expectedState)
   })
 
+  it('dispatch '+types.REGISTRATION+" should add status success message", () => {
+    const formData = {
+      userName: 'John Doe',
+      email: 'john.doe@example.com'
+    }
+    const expectedState = {
+      userName: 'John Doe',
+      email: 'john.doe@example.com',
+      registrationStatus: 'Thank you John Doe! You have successfully registered.'
+    }
+
+    store.dispatch(actions.register(formData))
+    expect(store.getState().registration).toEqual(expectedState)
+  })
+
 })
