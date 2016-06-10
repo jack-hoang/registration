@@ -7,7 +7,7 @@
 
   "selenium" : {
     "start_process" : true,
-    "server_path" : "./node_modules/selenium-standalone/.selenium/selenium-server/2.50.1-server.jar",
+    "server_path" : "./node_modules/selenium-standalone/.selenium/selenium-server/2.53.0-server.jar",
     "log_path" : "",
     "host" : "127.0.0.1",
     "port" : 4444,
@@ -26,9 +26,7 @@
       "screenshots" : {
         "enabled" : true,
         "path" : "test/browser/reports"
-      }
-    },
-    "chrome" : {
+      },
       "desiredCapabilities": {
         "browserName": "chrome",
         "javascriptEnabled": true,
